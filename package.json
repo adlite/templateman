@@ -3,13 +3,20 @@
 	"version": "0.0.1",
 	"description": "",
 	"main": "./lib/index.js",
+	"bin": {
+		"templateman": "./lib/index.js"
+	},
 	"scripts": {
-		"build": "babel ./src --out-dir ./lib",
+		"build": "rm -rf ./lib && babel ./src --out-dir ./lib",
+		"watch": "babel --watch ./src --out-dir ./lib",
 		"precommit": "lint-staged",
 		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\""
 	},
 	"lint-staged": {
-		"*.js": ["yarn run prettier", "git add"]
+		"*.js": [
+			"yarn run prettier",
+			"git add"
+		]
 	},
 	"repository": {
 		"type": "git",
@@ -24,7 +31,10 @@
 	"dependencies": {
 		"chalk": "^2.3.2",
 		"clear": "^0.1.0",
+		"cosmiconfig": "^4.0.0",
 		"inquirer": "^5.1.0",
+		"is-plain-object": "^2.0.4",
+		"is-string": "^1.0.4",
 		"lodash.uniq": "^4.5.0",
 		"walk": "^2.3.13"
 	},
