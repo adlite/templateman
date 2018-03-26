@@ -63,5 +63,5 @@ typings/
 # JetBrains project directory
 .idea/
 
-# built library
+# built directory
 lib/
