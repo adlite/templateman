@@ -9,7 +9,7 @@
 		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\""
 	},
 	"lint-staged": {
-		"*.js": ["yarn run build", "git add"]
+		"*.js": ["yarn run prettier", "git add"]
 	},
 	"repository": {
 		"type": "git",
