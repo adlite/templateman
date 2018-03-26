@@ -1,0 +1,38 @@
+{
+	"name": "templateman",
+	"version": "0.0.1",
+	"description": "",
+	"main": "./lib/index.js",
+	"scripts": {
+		"build": "babel ./src --out-dir ./lib",
+		"precommit": "lint-staged",
+		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\""
+	},
+	"lint-staged": {
+		"*.{js,json}": ["yarn run prettier && yarn run build", "git add"]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/adlite/templateman.git"
+	},
+	"author": "adlite",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/adlite/templateman/issues"
+	},
+	"homepage": "https://github.com/adlite/templateman#readme",
+	"dependencies": {
+		"chalk": "^2.3.2",
+		"clear": "^0.1.0",
+		"inquirer": "^5.1.0",
+		"lodash.uniq": "^4.5.0",
+		"walk": "^2.3.13"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"husky": "^0.14.3",
+		"lint-staged": "^7.0.0",
+		"prettier": "1.11.1"
+	}
+}
