@@ -37,6 +37,7 @@
 		"is-plain-object": "^2.0.4",
 		"is-string": "^1.0.4",
 		"lodash.uniq": "^4.5.0",
+		"mkdirp": "^0.5.1",
 		"walk": "^2.3.13"
 	},
 	"devDependencies": {
