@@ -6,6 +6,8 @@ export default class Config {
 		if (cosmiconfig !== null) {
 			this.options = cosmiconfig.config;
 			this.path = cosmiconfig.filepath;
+			this.templates = [];
+			this.currentTemplate = null;
 			this.validateConfig();
 			this.createTemplates();
 		} else {
@@ -26,6 +28,15 @@ export default class Config {
 			return new ConfigTemplate(template);
 		});
 		this.templates = res.filter((template) => template.isValid());
+	}
+
+	setCurrentTemplate(templateName) {
+		for (let template of this.templates) {
+			if (templateName === template.getName()) {
+				this.currentTemplate = template;
+				return;
+			}
+		}
 	}
 
 	getTemplateNamesArray() {

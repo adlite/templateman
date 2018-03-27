@@ -5,7 +5,7 @@ import Config from './Config.js';
 export default class App {
 	constructor(config) {
 		try {
-			this.tmconfig = new Config(config);
+			this.config = new Config(config);
 			this.init();
 		} catch (err) {
 			console.log(chalk.red(err));
@@ -13,13 +13,17 @@ export default class App {
 	}
 
 	init() {
-		inquirer.prompt([
-			{
-				type: 'list',
-				name: 'template',
-				message: 'Choose your template below:',
-				choices: this.tmconfig.getTemplateNamesArray(),
-			},
-		]);
+		inquirer
+			.prompt([
+				{
+					type: 'list',
+					name: 'templateName',
+					message: 'Choose your template below:',
+					choices: this.config.getTemplateNamesArray(),
+				},
+			])
+			.then((answers) => {
+				this.config.setCurrentTemplate(answers.templateName);
+			});
 	}
 }
