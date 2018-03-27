@@ -7,20 +7,16 @@ export default class ConfigTemplate {
 	}
 
 	isValid() {
-		const { name, path, outputDir } = this.options;
+		const { name, path } = this.options;
 		return (
 			isObject(this.options) &&
 			isString(name) &&
-			isString(path) &&
-			isString(outputDir) &&
-			name.trim().length > 0
+			name.trim().length > 0 &&
+			(Array.isArray(path) || isObject(path))
 		);
 	}
 
 	getName() {
-		if (this.options.prettyName) {
-			return this.options.prettyName;
-		}
 		return this.options.name;
 	}
 }
