@@ -10,7 +10,8 @@
 		"build": "rm -rf ./lib && babel ./src --out-dir ./lib",
 		"watch": "babel --watch ./src --out-dir ./lib",
 		"precommit": "lint-staged",
-		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\""
+		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
+		"clean": "rm -rf ./lib"
 	},
 	"lint-staged": {
 		"*.js": [
