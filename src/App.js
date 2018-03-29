@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
 import Config from './Config.js';
+import Inquirer from './Inquirer';
 
 export default class App {
 	constructor(config) {
@@ -13,17 +14,30 @@ export default class App {
 	}
 
 	init() {
-		inquirer
-			.prompt([
-				{
-					type: 'list',
-					name: 'template',
-					message: 'Choose your template below:',
-					choices: this.config.getTemplateNamesArray(),
-				},
-			])
-			.then((answers) => {
-				this.config.setCurrentTemplate(answers.template);
+		this.inquireTemplates();
+	}
+
+	inquireTemplates() {
+		const names = this.config.getTemplateNamesArray();
+		inquirer.prompt(Inquirer.templatesConfig(names)).then((answers) => {
+			this.config.setCurrentTemplate(answers.template);
+			//TODO: invoke inquireVars()
+			// this.inquireVars();
+		});
+	}
+
+	inquireVars() {
+		const names = this.config.vars;
+		if (names.length) {
+			inquirer.prompt(Inquirer.varsConfig(names)).then((answers) => {
+				this.emitFiles();
 			});
+		} else {
+			this.emitFiles();
+		}
+	}
+
+	emitFiles() {
+		this.config.currentTemplate.emitFiles();
 	}
 }

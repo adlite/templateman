@@ -40,4 +40,9 @@ export default class TemplateConfig {
 		});
 		this.vars = uniq(this.vars);
 	}
+
+	emitFiles() {
+		//TODO: implement TemplateConfig.emitFiles()
+		console.log('Files were emitted');
+	}
 }
