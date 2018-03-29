@@ -17,13 +17,13 @@ export default class App {
 			.prompt([
 				{
 					type: 'list',
-					name: 'templateName',
+					name: 'template',
 					message: 'Choose your template below:',
 					choices: this.config.getTemplateNamesArray(),
 				},
 			])
 			.then((answers) => {
-				this.config.setCurrentTemplate(answers.templateName);
+				this.config.setCurrentTemplate(answers.template);
 			});
 	}
 }

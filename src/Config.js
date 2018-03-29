@@ -1,5 +1,5 @@
 import isObject from 'is-plain-object';
-import ConfigTemplate from './ConfigTemplate.js';
+import TemplateConfig from './TemplateConfig.js';
 
 export default class Config {
 	constructor(cosmiconfig) {
@@ -25,7 +25,7 @@ export default class Config {
 
 	createTemplates() {
 		const res = this.options.templates.map((template) => {
-			return new ConfigTemplate(template);
+			return new TemplateConfig(template);
 		});
 		this.templates = res.filter((template) => template.isValid());
 	}
@@ -34,6 +34,7 @@ export default class Config {
 		for (let template of this.templates) {
 			if (templateName === template.getName()) {
 				this.currentTemplate = template;
+				this.currentTemplate.load();
 				return;
 			}
 		}

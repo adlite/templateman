@@ -1,7 +1,7 @@
 import isObject from 'is-plain-object';
 import isString from 'is-string';
 
-export default class ConfigTemplate {
+export default class TemplateConfig {
 	constructor(options) {
 		this.options = options;
 	}
