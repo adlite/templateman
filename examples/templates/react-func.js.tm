@@ -7,16 +7,16 @@ import cn from 'classnames';
 // Styles
 import style from './style.styl';
 
-const ${TM_COMPONENT_NAME} = ({ className }) => (
-  <div className={cn(style.${TM_COMPONENT_NAME}, className)}>${TM_COMPONENT_NAME} content</div>
+const ${TM:COMPONENT_NAME} = ({ className }) => (
+  <div className={cn(style.${TM:COMPONENT_NAME}, className)}>${TM:COMPONENT_NAME} content</div>
 );
 
-${TM_COMPONENT_NAME}.defaultProps = {
+${TM:COMPONENT_NAME}.defaultProps = {
   className: '',
 };
 
-${TM_COMPONENT_NAME}.propTypes = {
+${TM:COMPONENT_NAME}.propTypes = {
   className: PropTypes.string,
 };
 
-export default ${TM_COMPONENT_NAME};
+export default ${TM:COMPONENT_NAME};

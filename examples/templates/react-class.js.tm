@@ -7,7 +7,7 @@ import cn from 'classnames';
 // Styles
 import style from './style.styl';
 
-export default class ${TM_COMPONENT_NAME} extends Component {
+export default class ${TM:COMPONENT_NAME} extends Component {
   static propTypes = {
     className: PropTypes.string,
   };
@@ -24,6 +24,6 @@ export default class ${TM_COMPONENT_NAME} extends Component {
   render() {
     const { className } = this.props;
 
-    return <div className={cn(style.${TM_COMPONENT_NAME}, className)}>${TM_COMPONENT_NAME} content</div>;
+    return <div className={cn(style.${TM:COMPONENT_NAME}, className)}>${TM:COMPONENT_NAME} content</div>;
   }
 }

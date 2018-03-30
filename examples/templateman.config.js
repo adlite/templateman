@@ -38,5 +38,12 @@ module.exports = {
 				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
+		{
+			name: 'No vars JavaScript class',
+			path: {
+				from: './templates/export-class.js.tm',
+				to: './output/export-class.js',
+			},
+		},
 	],
 };

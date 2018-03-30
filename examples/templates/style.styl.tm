@@ -1,4 +1,4 @@
-.${TM_STYLUS_CLASSNAME} {
+.${TM:STYLUS_CLASSNAME} {
   & {
   }
 }

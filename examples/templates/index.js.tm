@@ -1,1 +1,1 @@
-export { default } from './${TM_COMPONENT_NAME}';
+export { default } from './${TM:COMPONENT_NAME}';
