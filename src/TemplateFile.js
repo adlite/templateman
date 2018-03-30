@@ -10,7 +10,7 @@ export default class TemplateFile {
 			this.from = from;
 			this.to = to;
 			this.absFrom = path.resolve(process.cwd(), this.from);
-			this.absTo = '';
+			this.absTo = path.resolve(process.cwd(), this.to);
 			this.fileContent = '';
 			this.outputFileContent = '';
 			this.vars = [];

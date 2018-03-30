@@ -21,15 +21,15 @@ export default class App {
 		const names = this.config.getTemplateNamesArray();
 		inquirer.prompt(Inquirer.templatesConfig(names)).then((answers) => {
 			this.config.setCurrentTemplate(answers.template);
-			//TODO: invoke inquireVars()
-			// this.inquireVars();
+			this.inquireVars();
 		});
 	}
 
 	inquireVars() {
-		const names = this.config.vars;
+		const names = this.config.currentTemplate.vars;
 		if (names.length) {
 			inquirer.prompt(Inquirer.varsConfig(names)).then((answers) => {
+				console.log(answers);
 				this.emitFiles();
 			});
 		} else {

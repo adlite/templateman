@@ -11,6 +11,14 @@ export default class Inquirer {
 	}
 
 	static varsConfig(varNames) {
-		//TODO: implement Inquirer.varsConfig()
+		return varNames.map((varName) => Inquirer.createInputConfig(varName));
+	}
+
+	static createInputConfig(varName) {
+		return {
+			type: 'input',
+			name: varName,
+			message: `${varName}:`,
+		};
 	}
 }
