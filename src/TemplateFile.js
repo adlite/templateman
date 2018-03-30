@@ -19,7 +19,7 @@ export default class TemplateFile {
 			this.load();
 		} else {
 			throw new Error(
-				'Template configuration path error. It should contain required "from" and "to" path strings',
+				'Template configuration path error. It should contain required "from" and "to" strings.',
 			);
 		}
 	}

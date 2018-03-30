@@ -11,14 +11,14 @@ export default class Config {
 			this.validateConfig();
 			this.createTemplates();
 		} else {
-			throw new Error('Templateman configuration file is not found in current path');
+			throw new Error('Templateman configuration file is not found in current path.');
 		}
 	}
 
 	validateConfig() {
 		if (!isObject(this.options) || !Array.isArray(this.options.templates)) {
 			throw new Error(
-				'Templateman configuration files scheme is wrong. It should contain "templates" array.',
+				'Templateman configuration file scheme is wrong. It should contain required "templates" array.',
 			);
 		}
 	}
