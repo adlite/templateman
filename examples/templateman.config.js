@@ -2,7 +2,7 @@ module.exports = {
 	templates: [
 		{
 			name: 'React Function Component',
-			path: [
+			files: [
 				{
 					from: './templates/react-func.js.tm',
 					to: './output/${TM:COMPONENT_DIRNAME}/${TM:COMPONENT_FILENAME}.js',
@@ -19,20 +19,20 @@ module.exports = {
 		},
 		{
 			name: 'React Function',
-			path: {
+			files: {
 				from: './templates/react-func.js.tm',
 				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
 		{
 			name: 'React Class',
-			path: {
+			files: {
 				from: './templates/react-class.js.tm',
 				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
 		{
-			name: 'Stylus Stylesheet',
+			files: 'Stylus Stylesheet',
 			path: {
 				from: './templates/react-class.js.tm',
 				to: './output/${TM:COMPONENT_FILENAME}.js',
@@ -40,7 +40,7 @@ module.exports = {
 		},
 		{
 			name: 'No vars JavaScript class',
-			path: {
+			files: {
 				from: './templates/export-class.js.tm',
 				to: './output/export-class.js',
 			},

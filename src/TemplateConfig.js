@@ -11,12 +11,12 @@ export default class TemplateConfig {
 	}
 
 	isValid() {
-		const { name, path } = this.options;
+		const { name, files } = this.options;
 		return (
 			isObject(this.options) &&
 			isString(name) &&
 			name.trim().length > 0 &&
-			(Array.isArray(path) || isObject(path))
+			(Array.isArray(files) || isObject(files))
 		);
 	}
 
@@ -25,14 +25,14 @@ export default class TemplateConfig {
 	}
 
 	load() {
-		const { path } = this.options;
+		const { files } = this.options;
 
-		if (Array.isArray(path)) {
-			path.forEach((options) => {
+		if (Array.isArray(files)) {
+			files.forEach((options) => {
 				this.templateFiles.push(new TemplateFile(options));
 			});
 		} else {
-			this.templateFiles.push(new TemplateFile(path));
+			this.templateFiles.push(new TemplateFile(files));
 		}
 
 		this.templateFiles.forEach((file) => {
