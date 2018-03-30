@@ -34,8 +34,11 @@ export default class TemplateFile {
 
 	createOutputFile() {
 		mkdirp.sync(path.dirname(this.absTo));
-		//TODO: check file existence
-		fs.writeFileSync(this.absTo, this.outputContent);
+		if (fs.existsSync(this.absTo) && fs.statSync(this.absTo).isFile()) {
+			throw new Error(`${this.absTo} file already exists`);
+		} else {
+			fs.writeFileSync(this.absTo, this.outputContent);
+		}
 	}
 
 	load() {
