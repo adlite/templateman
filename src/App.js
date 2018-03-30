@@ -19,6 +19,7 @@ export default class App {
 
 	inquireTemplates() {
 		const names = this.config.getTemplateNamesArray();
+		//TODO: add Promise rejection catching
 		inquirer.prompt(Inquirer.templatesConfig(names)).then((answers) => {
 			this.config.setCurrentTemplate(answers.template);
 			this.inquireVars();

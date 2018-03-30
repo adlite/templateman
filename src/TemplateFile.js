@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
+import mkdirp from 'mkdirp';
 import isString from 'is-string';
-import isObject from 'is-plain-object';
 import uniq from 'lodash.uniq';
 import Parser from './Parser';
 
@@ -33,8 +33,10 @@ export default class TemplateFile {
 	}
 
 	createOutputFile() {
-		//TODO: implement TemplateFile.createOutputFile()
-		console.log('File created');
+		//TODO: wrap with try..catch
+		mkdirp.sync(path.dirname(this.absTo));
+		//TODO: check file existence
+		fs.writeFileSync(this.absTo, this.outputContent);
 	}
 
 	load() {
