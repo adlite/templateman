@@ -9,11 +9,11 @@ module.exports = {
 				},
 				{
 					from: './templates/style.styl.tm',
-					to: './output/${TM_COMPONENT_NAME}/style.styl',
+					to: './output/${TM_COMPONENT_DIRNAME}/style.styl',
 				},
 				{
 					from: './templates/index.js.tm',
-					to: './output/${TM_COMPONENT_NAME}/index.js',
+					to: './output/${TM_COMPONENT_DIRNAME}/index.js',
 				},
 			],
 		},

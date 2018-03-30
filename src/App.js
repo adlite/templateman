@@ -26,18 +26,13 @@ export default class App {
 	}
 
 	inquireVars() {
-		const names = this.config.currentTemplate.vars;
-		if (names.length) {
-			inquirer.prompt(Inquirer.varsConfig(names)).then((answers) => {
-				console.log(answers);
-				this.emitFiles();
+		const { vars } = this.config.currentTemplate;
+		if (vars.length) {
+			inquirer.prompt(Inquirer.varsConfig(vars)).then((answers) => {
+				this.config.currentTemplate.emitFiles(answers);
 			});
 		} else {
-			this.emitFiles();
+			this.config.currentTemplate.emitFiles();
 		}
-	}
-
-	emitFiles() {
-		this.config.currentTemplate.emitFiles();
 	}
 }
