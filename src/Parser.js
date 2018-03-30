@@ -1,8 +1,8 @@
 import uniq from 'lodash.uniq';
 
 const Parser = {
-	regVarname: /\${TM_([\D][A-Z0-9_]+)}/gm,
-	regVarnameOnce: /\${TM_([\D][A-Z0-9_]+)}/,
+	regVarname: /\${TM:([A-Za-z0-9_]+)}/gm,
+	regVarnameOnce: /\${TM:([A-Za-z0-9_]+)}/,
 
 	getVars: (data) => {
 		let res;

@@ -5,15 +5,15 @@ module.exports = {
 			path: [
 				{
 					from: './templates/react-func.js.tm',
-					to: './output/${TM_COMPONENT_DIRNAME}/${TM_COMPONENT_FILENAME}.js',
+					to: './output/${TM:COMPONENT_DIRNAME}/${TM:COMPONENT_FILENAME}.js',
 				},
 				{
 					from: './templates/style.styl.tm',
-					to: './output/${TM_COMPONENT_DIRNAME}/style.styl',
+					to: './output/${TM:COMPONENT_DIRNAME}/style.styl',
 				},
 				{
 					from: './templates/index.js.tm',
-					to: './output/${TM_COMPONENT_DIRNAME}/index.js',
+					to: './output/${TM:COMPONENT_DIRNAME}/index.js',
 				},
 			],
 		},
@@ -21,21 +21,21 @@ module.exports = {
 			name: 'React Function',
 			path: {
 				from: './templates/react-func.js.tm',
-				to: './output/${TM_COMPONENT_FILENAME}.js',
+				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
 		{
 			name: 'React Class',
 			path: {
 				from: './templates/react-class.js.tm',
-				to: './output/${TM_COMPONENT_FILENAME}.js',
+				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
 		{
 			name: 'Stylus Stylesheet',
 			path: {
 				from: './templates/react-class.js.tm',
-				to: './output/${TM_COMPONENT_FILENAME}.js',
+				to: './output/${TM:COMPONENT_FILENAME}.js',
 			},
 		},
 	],
