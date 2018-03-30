@@ -19,19 +19,24 @@ export default class App {
 
 	inquireTemplates() {
 		const names = this.config.getTemplateNamesArray();
-		//TODO: add Promise rejection catching
-		inquirer.prompt(Inquirer.templatesConfig(names)).then((answers) => {
-			this.config.setCurrentTemplate(answers.template);
-			this.inquireVars();
-		});
+		inquirer
+			.prompt(Inquirer.templatesConfig(names))
+			.then((answers) => {
+				this.config.setCurrentTemplate(answers.template);
+				this.inquireVars();
+			})
+			.catch((err) => console.log(chalk.red(err)));
 	}
 
 	inquireVars() {
 		const { vars } = this.config.currentTemplate;
 		if (vars.length) {
-			inquirer.prompt(Inquirer.varsConfig(vars)).then((answers) => {
-				this.config.currentTemplate.emitFiles(answers);
-			});
+			inquirer
+				.prompt(Inquirer.varsConfig(vars))
+				.then((answers) => {
+					this.config.currentTemplate.emitFiles(answers);
+				})
+				.catch((err) => console.log(chalk.red(err)));
 		} else {
 			this.config.currentTemplate.emitFiles();
 		}

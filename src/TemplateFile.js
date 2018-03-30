@@ -33,16 +33,13 @@ export default class TemplateFile {
 	}
 
 	createOutputFile() {
-		//TODO: wrap with try..catch
 		mkdirp.sync(path.dirname(this.absTo));
 		//TODO: check file existence
 		fs.writeFileSync(this.absTo, this.outputContent);
 	}
 
 	load() {
-		//TODO: check file existance in a right way
 		if (fs.existsSync(this.absFrom)) {
-			//TODO: wrap it by try..catch
 			this.content = fs.readFileSync(this.absFrom).toString();
 			let fileVars = Parser.getVars(this.content);
 			let toVars = Parser.getVars(this.to);
