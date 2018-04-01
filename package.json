@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "./lib/index.js",
 	"bin": {
-		"templateman": "./lib/index.js"
+		"tm": "./lib/index.js"
 	},
 	"scripts": {
 		"build": "rm -rf ./lib && babel ./src --out-dir ./lib",
@@ -37,8 +37,7 @@
 		"is-plain-object": "^2.0.4",
 		"is-string": "^1.0.4",
 		"lodash.uniq": "^4.5.0",
-		"mkdirp": "^0.5.1",
-		"walk": "^2.3.13"
+		"mkdirp": "^0.5.1"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
