@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import Config from './Config.js';
+import Config from './Config';
 import Inquirer from './Inquirer';
 
 export default class App {

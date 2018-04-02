@@ -1,5 +1,5 @@
 import isObject from 'is-plain-object';
-import TemplateConfig from './TemplateConfig.js';
+import TemplateConfig from './TemplateConfig';
 
 export default class Config {
 	constructor(cosmiconfig) {
