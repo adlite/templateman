@@ -1,7 +1,7 @@
 import isObject from 'is-plain-object';
 import TemplateConfig from './TemplateConfig';
 
-//TODO: use this.path instead of process.cwd()
+//TODO: use this.path instead of process.cwd() by replacing all cosmiconfig.config paths to absolute
 export default class Config {
 	constructor(cosmiconfig) {
 		if (cosmiconfig !== null) {
