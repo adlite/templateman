@@ -2,6 +2,10 @@
 import cosmiconfig from 'cosmiconfig';
 import App from './App';
 
+//TODO: add package.json engines field
+//TODO: add message about successfully created component
+//TODO: use this.path instead of process.cwd() by replacing all cosmiconfig.config paths to absolute
+
 const config = cosmiconfig('templateman', {
 	sync: true,
 	rcExtensions: true,
