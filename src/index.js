@@ -12,4 +12,4 @@ const config = cosmiconfig('templateman', {
 	rcExtensions: true,
 });
 
-new App(config.load());
+App.run(config.load());

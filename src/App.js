@@ -3,42 +3,42 @@ import inquirer from 'inquirer';
 import Config from './Config';
 import Inquirer from './Inquirer';
 
-export default class App {
-	constructor(config) {
+const App = {
+	config: {},
+
+	run: (cosmiconfig) => {
 		try {
-			this.config = new Config(config);
-			this.init();
+			App.config = new Config(cosmiconfig);
+			App.inquireTemplates();
 		} catch (err) {
 			console.log(chalk.red(err));
 		}
-	}
+	},
 
-	init() {
-		this.inquireTemplates();
-	}
-
-	inquireTemplates() {
-		const names = this.config.getTemplateNamesArray();
+	inquireTemplates: () => {
+		const names = App.config.getTemplateNamesArray();
 		inquirer
 			.prompt(Inquirer.templatesConfig(names))
 			.then((answers) => {
-				this.config.setCurrentTemplate(answers.template);
-				this.inquireVars();
+				App.config.setCurrentTemplate(answers.template);
+				App.inquireVars();
 			})
 			.catch((err) => console.log(chalk.red(err)));
-	}
+	},
 
-	inquireVars() {
-		const { vars } = this.config.currentTemplate;
+	inquireVars: () => {
+		const { vars } = App.config.currentTemplate;
 		if (vars.length) {
 			inquirer
 				.prompt(Inquirer.varsConfig(vars))
 				.then((answers) => {
-					this.config.currentTemplate.emitFiles(answers);
+					App.config.currentTemplate.emitFiles(answers);
 				})
 				.catch((err) => console.log(chalk.red(err)));
 		} else {
-			this.config.currentTemplate.emitFiles();
+			App.config.currentTemplate.emitFiles();
 		}
-	}
-}
+	},
+};
+
+export default App;
