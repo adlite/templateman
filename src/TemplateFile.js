@@ -24,6 +24,8 @@ export default class TemplateFile {
 		}
 	}
 
+	static isValid(file) {}
+
 	replaceOutputContent() {
 		this.outputContent = Parser.replaceVars(this.content, this.varValues);
 	}
