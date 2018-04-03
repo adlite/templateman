@@ -1,7 +1,7 @@
 {
 	"name": "templateman",
 	"version": "0.0.1",
-	"description": "",
+	"description": "Simple and flexible code generating tool for frequently used components.",
 	"main": "./lib/index.js",
 	"bin": {
 		"tm": "./lib/index.js"
@@ -10,12 +10,13 @@
 		"build": "rm -rf ./lib && babel ./src --out-dir ./lib",
 		"watch": "babel --watch ./src --out-dir ./lib",
 		"precommit": "lint-staged",
+		"prepublish": "npm run build && npm version patch",
 		"prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
 		"clean": "rm -rf ./lib"
 	},
 	"lint-staged": {
 		"*.js": [
-			"yarn run prettier",
+			"npm run prettier",
 			"git add"
 		]
 	},
