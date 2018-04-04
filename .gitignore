@@ -65,3 +65,4 @@ typings/
 
 # built directory
 lib/
+examples/output/

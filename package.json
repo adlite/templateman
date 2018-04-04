@@ -2,9 +2,12 @@
 	"name": "templateman",
 	"version": "0.0.1",
 	"description": "Simple and flexible code generating tool for frequently used components.",
-	"main": "./lib/index.js",
 	"bin": {
 		"tm": "./lib/index.js"
+	},
+	"files": ["lib"],
+	"engines": {
+		"node": ">=6.0.0"
 	},
 	"scripts": {
 		"build": "rm -rf ./lib && babel ./src --out-dir ./lib",
@@ -24,7 +27,7 @@
 		"type": "git",
 		"url": "git+https://github.com/adlite/templateman.git"
 	},
-	"author": "adlite",
+	"author": "Adlite <adlite@yandex.ru>",
 	"license": "Apache-2.0",
 	"bugs": {
 		"url": "https://github.com/adlite/templateman/issues"
