@@ -17,26 +17,28 @@ const App = {
 
 	inquireTemplates: () => {
 		const names = App.config.getTemplateNamesArray();
+
 		inquirer
 			.prompt(Inquirer.templatesConfig(names))
 			.then((answers) => {
-				App.config.setCurrentTemplate(answers.template);
+				App.config.loadCurrentTemplate(answers.template);
 				App.inquireVars();
 			})
 			.catch((err) => console.log(chalk.red(err)));
 	},
 
 	inquireVars: () => {
-		const { vars } = App.config.currentTemplate;
+		const { vars } = App.config;
+
 		if (vars.length) {
 			inquirer
 				.prompt(Inquirer.varsConfig(vars))
 				.then((answers) => {
-					App.config.currentTemplate.emitFiles(answers);
+					App.config.emitFiles(answers);
 				})
 				.catch((err) => console.log(chalk.red(err)));
 		} else {
-			App.config.currentTemplate.emitFiles();
+			App.config.emitFiles();
 		}
 	},
 };
