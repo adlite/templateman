@@ -17,6 +17,7 @@ const App = {
 
 	inquireTemplates: () => {
 		const names = App.config.getTemplateNamesArray();
+		Inquirer.printWelcome();
 
 		inquirer
 			.prompt(Inquirer.templatesConfig(names))
@@ -35,10 +36,12 @@ const App = {
 				.prompt(Inquirer.varsConfig(vars))
 				.then((answers) => {
 					App.config.emitFiles(answers);
+					Inquirer.printSuccess();
 				})
 				.catch((err) => console.log(chalk.red(err)));
 		} else {
 			App.config.emitFiles();
+			Inquirer.printSuccess();
 		}
 	},
 };
