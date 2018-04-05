@@ -15,7 +15,7 @@
     "build": "rm -rf ./lib && babel ./src --out-dir ./lib",
     "watch": "babel --watch ./src --out-dir ./lib",
     "precommit": "lint-staged",
-    "prepublish": "npm run build && npm version patch",
+    "prepublishOnly": "npm run build && npm version patch",
     "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
     "clean": "rm -rf ./lib"
   },
