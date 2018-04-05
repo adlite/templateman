@@ -5,6 +5,16 @@
   "bin": {
     "tm": "./lib/index.js"
   },
+  "keywords": [
+    "cli",
+    "terminal",
+    "template",
+    "generate",
+    "components",
+    "react",
+    "automation",
+    "automation"
+  ],
   "files": [
     "lib"
   ],
