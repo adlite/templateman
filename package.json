@@ -26,6 +26,7 @@
     "watch": "babel --watch ./src --out-dir ./lib",
     "precommit": "lint-staged",
     "prepublishOnly": "npm run build && npm version patch",
+    "postversion": "git push && git push --tags",
     "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
     "clean": "rm -rf ./lib"
   },
