@@ -66,3 +66,6 @@ typings/
 # built directory
 lib/
 examples/output/
+
+# Desktop Services Store
+.DS_Store

@@ -10,7 +10,7 @@ export default class TemplateFile {
 	constructor(options) {
 		if (!TemplateFile.isValid(options)) {
 			throw new Error(
-				`No valid files found in selected template. Every file in template should contain 'from' and 'to' fields`,
+				`No valid files found in selected template. Every file in template should contain "from" and "to" fields.`,
 			);
 		}
 
@@ -35,7 +35,7 @@ export default class TemplateFile {
 	createOutputFile() {
 		mkdirp.sync(path.dirname(this.to));
 		if (fs.existsSync(this.to) && fs.statSync(this.to).isFile()) {
-			throw new Error(`${this.to} file already exists`);
+			throw new Error(`"${this.to}" file already exists.`);
 		}
 		fs.writeFileSync(this.to, this.outputContent);
 	}
@@ -52,7 +52,7 @@ export default class TemplateFile {
 		if (fs.existsSync(this.from) && fs.statSync(this.from).isFile()) {
 			this.content = fs.readFileSync(this.from).toString();
 		} else {
-			throw new Error(`'${this.from}' template file is not found`);
+			throw new Error(`'${this.from}' template file is not found.`);
 		}
 
 		return this.content;

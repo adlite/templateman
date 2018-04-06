@@ -1,4 +1,5 @@
 import path from 'path';
+import chalk from 'chalk';
 import isObject from 'is-plain-object';
 import isString from 'is-string';
 import uniq from 'lodash.uniq';
@@ -7,7 +8,11 @@ import TemplateFile from './TemplateFile';
 export default class Config {
 	constructor(cosmiconfig) {
 		if (!cosmiconfig) {
-			throw new Error('Templateman configuration file is not found in current path.');
+			throw new Error(
+				`Templateman configuration file is not found. Please create it.\n${chalk.cyan(
+					'See documentation on ',
+				) + chalk.cyan.underline('https://www.npmjs.com/package/templateman')}`,
+			);
 		}
 
 		this.options = cosmiconfig.config;
@@ -59,7 +64,7 @@ export default class Config {
 
 			if (files.length === 0) {
 				throw new Error(
-					`No valid files found in selected template. Every file in template should contain 'from' and 'to' fields`,
+					'No valid files found in selected template. Every file in template should contain "from" and "to" fields.',
 				);
 			}
 
