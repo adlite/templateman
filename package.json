@@ -24,17 +24,11 @@
   "scripts": {
     "build": "rm -rf ./lib && babel ./src --out-dir ./lib",
     "watch": "babel --watch ./src --out-dir ./lib",
-    "precommit": "lint-staged",
     "prepublishOnly": "npm run build",
     "postversion": "git add -A && git push && git push --tags",
     "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
-    "clean": "rm -rf ./lib"
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run prettier",
-      "git add"
-    ]
+    "clean": "rm -rf ./lib",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -60,7 +54,12 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
+    "jest": "^24.8.0",
     "prettier": "1.11.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --verbose"
+    }
   }
 }
