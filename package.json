@@ -22,12 +22,12 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build": "rm -rf ./lib && babel ./src --out-dir ./lib",
+    "build": "npm run clean && babel ./src --out-dir ./lib",
     "watch": "babel --watch ./src --out-dir ./lib",
     "prepublishOnly": "npm run build",
     "postversion": "git add -A && git push && git push --tags",
     "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
-    "clean": "rm -rf ./lib",
+    "clean": "rimraf ./lib",
     "test": "jest"
   },
   "repository": {
@@ -55,11 +55,13 @@
     "babel-preset-env": "^1.6.1",
     "husky": "^0.14.3",
     "jest": "^24.8.0",
-    "prettier": "1.11.1"
+    "prettier": "1.11.1",
+    "rimraf": "^2.6.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged --verbose"
     }
-  }
+  },
+  "jest": {}
 }
