@@ -52,7 +52,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "husky": "^0.14.3",
+    "husky": "^4.2.5",
     "jest": "^24.8.0",
     "prettier": "^2.0.4",
     "rimraf": "^2.6.3"
