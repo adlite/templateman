@@ -9,9 +9,10 @@ export default class Config {
 	constructor(cosmiconfig) {
 		if (!cosmiconfig) {
 			throw new Error(
-				`Templateman configuration file is not found. Please create it.\n${chalk.cyan(
-					'See documentation on ',
-				) + chalk.cyan.underline('https://www.npmjs.com/package/templateman')}`,
+				`Templateman configuration file is not found. Please create it.\n${
+					chalk.cyan('See documentation on ') +
+					chalk.cyan.underline('https://www.npmjs.com/package/templateman')
+				}`,
 			);
 		}
 

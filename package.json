@@ -25,7 +25,7 @@
     "build": "npm run clean && babel src --out-dir lib",
     "watch": "babel --watch src --out-dir lib",
     "prepublishOnly": "npm run build",
-    "prettier": "prettier --config .prettierrc.json --write \"./src/**/*.js\"",
+    "prettier": "prettier --config .prettierrc.json --write \"./**/*.js\"",
     "clean": "rimraf lib",
     "test": "jest"
   },
@@ -54,13 +54,12 @@
     "babel-preset-env": "^1.6.1",
     "husky": "^0.14.3",
     "jest": "^24.8.0",
-    "prettier": "1.11.1",
+    "prettier": "^2.0.4",
     "rimraf": "^2.6.3"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged --verbose"
     }
-  },
-  "jest": {}
+  }
 }
