@@ -4,7 +4,7 @@ const Parser = {
 	regVarname: /\${TM:([A-Za-z0-9_]+)}/gm,
 	regVarnameOnce: /\${TM:([A-Za-z0-9_]+)}/,
 
-	getVars: (data) => {
+	getVars: data => {
 		let res;
 		let vars = [];
 		while ((res = Parser.regVarname.exec(data))) {
@@ -14,7 +14,7 @@ const Parser = {
 	},
 
 	replaceVars: (data, values) => {
-		return data.replace(Parser.regVarname, (foundStr) => {
+		return data.replace(Parser.regVarname, foundStr => {
 			const varName = foundStr.match(Parser.regVarnameOnce)[1];
 			return values[varName];
 		});

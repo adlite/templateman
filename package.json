@@ -22,12 +22,11 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build": "npm run clean && babel ./src --out-dir ./lib",
-    "watch": "babel --watch ./src --out-dir ./lib",
+    "build": "npm run clean && babel src --out-dir lib",
+    "watch": "babel --watch src --out-dir lib",
     "prepublishOnly": "npm run build",
-    "postversion": "git add -A && git push && git push --tags",
-    "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
-    "clean": "rimraf ./lib",
+    "prettier": "prettier --config .prettierrc.json --write \"./src/**/*.js\"",
+    "clean": "rimraf lib",
     "test": "jest"
   },
   "repository": {

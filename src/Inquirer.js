@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 
 const Inquirer = {
-	templatesConfig: (templateNames) => [
+	templatesConfig: templateNames => [
 		{
 			type: 'list',
 			name: 'template',
@@ -10,8 +10,8 @@ const Inquirer = {
 		},
 	],
 
-	varsConfig: (varNames) => {
-		return varNames.map((varName) => ({
+	varsConfig: varNames => {
+		return varNames.map(varName => ({
 			type: 'input',
 			name: varName,
 			message: `${varName}:`,

@@ -6,7 +6,7 @@ import Inquirer from './Inquirer';
 const App = {
 	config: {},
 
-	run: (cosmiconfig) => {
+	run: cosmiconfig => {
 		try {
 			App.config = new Config(cosmiconfig);
 			App.inquireTemplates();
@@ -21,11 +21,11 @@ const App = {
 
 		inquirer
 			.prompt(Inquirer.templatesConfig(names))
-			.then((answers) => {
+			.then(answers => {
 				App.config.loadCurrentTemplate(answers.template);
 				App.inquireVars();
 			})
-			.catch((err) => console.log(chalk.red(err)));
+			.catch(err => console.log(chalk.red(err)));
 	},
 
 	inquireVars: () => {
@@ -34,11 +34,11 @@ const App = {
 		if (vars.length) {
 			inquirer
 				.prompt(Inquirer.varsConfig(vars))
-				.then((answers) => {
+				.then(answers => {
 					App.config.emitFiles(answers);
 					Inquirer.printSuccess();
 				})
-				.catch((err) => console.log(chalk.red(err)));
+				.catch(err => console.log(chalk.red(err)));
 		} else {
 			App.config.emitFiles();
 			Inquirer.printSuccess();
