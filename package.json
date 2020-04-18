@@ -27,7 +27,8 @@
     "prepublishOnly": "npm run test && npm run build",
     "prettier": "prettier --config .prettierrc.json --write \"./**/*.js\"",
     "clean": "rimraf lib",
-    "test": "jest"
+    "test": "jest",
+    "ci": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
