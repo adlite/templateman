@@ -5,8 +5,8 @@ import App from './App';
 //TODO: add commas in README
 
 const config = cosmiconfig('templateman', {
-	sync: true,
-	rcExtensions: true,
+  sync: true,
+  rcExtensions: true,
 });
 
 App.run(config.load());

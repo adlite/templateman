@@ -1,32 +1,32 @@
 import chalk from 'chalk';
 
 const Inquirer = {
-	templatesConfig: templateNames => [
-		{
-			type: 'list',
-			name: 'template',
-			message: 'Choose your template:',
-			choices: templateNames,
-		},
-	],
+  templatesConfig: templateNames => [
+    {
+      type: 'list',
+      name: 'template',
+      message: 'Choose your template:',
+      choices: templateNames,
+    },
+  ],
 
-	varsConfig: varNames => {
-		return varNames.map(varName => ({
-			type: 'input',
-			name: varName,
-			message: `${varName}:`,
-		}));
-	},
+  varsConfig: varNames => {
+    return varNames.map(varName => ({
+      type: 'input',
+      name: varName,
+      message: `${varName}:`,
+    }));
+  },
 
-	printWelcome: () => {
-		console.log(chalk.green('+------------------------+'));
-		console.log(chalk.green("> Hello, I'm Templateman <"));
-		console.log(chalk.green('+------------------------+'));
-	},
+  printWelcome: () => {
+    console.log(chalk.green('+------------------------+'));
+    console.log(chalk.green("> Hello, I'm Templateman <"));
+    console.log(chalk.green('+------------------------+'));
+  },
 
-	printSuccess: () => {
-		console.log(chalk.green('✔ Your template has been successfully generated!'));
-	},
+  printSuccess: () => {
+    console.log(chalk.green('✔ Your template has been successfully generated!'));
+  },
 };
 
 export default Inquirer;
