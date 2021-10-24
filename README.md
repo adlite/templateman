@@ -160,7 +160,7 @@ And extend templateman config file.
 Then run `tm` command in your terminal and see how Templateman magic works.
 
 ### Case transformers
-*This feature requires Templateman 0.1.0 version and higher.*
+*Requires 0.1.0 version or higher.*
 
 Sometimes you need to change case in Templateman variables. 
 For example, if your team use `kebab-case` in project file names, but framework requires to name its components in `PascalCase`.
