@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/adlite/templateman#readme",
   "dependencies": {
+    "caesar-caser": "^1.0.0-rc.2",
     "chalk": "^2.3.2",
     "clear": "^0.1.0",
     "cosmiconfig": "^4.0.0",
