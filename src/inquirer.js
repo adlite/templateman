@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import caser from 'caesar-caser';
 
 const Inquirer = {
   templatesConfig: templateNames => [
@@ -14,7 +15,7 @@ const Inquirer = {
     return varNames.map(varName => ({
       type: 'input',
       name: varName,
-      message: `${varName}:`,
+      message: `${caser(varName).convertTo('sentence')}:`,
     }));
   },
 
