@@ -1,0 +1,12 @@
+import Head from 'next/head';
+
+export default function ${TM:COMPONENT_NAME}() {
+  return (
+    <>
+      <Head>
+        <title>${TM:COMPONENT_NAME:CAP_SENTENCE_CASE}</title>
+      </Head>
+      <p>${TM:COMPONENT_NAME:SENTENCE_CASE} content</p>
+    </>
+  );
+}

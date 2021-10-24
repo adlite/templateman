@@ -1,0 +1,24 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import style from './style.module.css';
+
+export default class ${TM:COMPONENT_NAME} extends React.PureComponent {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    children: '',
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    const {children} = this.props;
+
+    return <div className={style.${TM:COMPONENT_NAME:CAMEL_CASE}}>{children}</div>;
+  }
+}

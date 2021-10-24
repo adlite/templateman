@@ -1,0 +1,17 @@
+{
+  "templates": [
+    {
+      "name": "Vue component",
+      "files": [
+        {
+          "from": "./templates/component.template",
+          "to": "./output/components/${TM:COMPONENT_NAME:KEBAB_CASE}/${TM:COMPONENT_NAME:KEBAB_CASE}.vue"
+        },
+        {
+          "from": "./templates/component-export-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME:KEBAB_CASE}/index.js"
+        }
+      ]
+    }
+  ]
+}

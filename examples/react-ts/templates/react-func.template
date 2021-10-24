@@ -1,0 +1,12 @@
+import React from 'react';
+import style from './style.module.css';
+
+interface Props {}
+
+export default function ${TM:COMPONENT_NAME}({children}: React.PropsWithChildren<Props>): JSX.Element {
+  return (
+    <div className={style.${TM:COMPONENT_NAME}}>
+      {children}
+    </div>
+  );
+}

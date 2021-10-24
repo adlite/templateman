@@ -1,0 +1,13 @@
+{
+  "templates": [
+    {
+      "name": "Redux module",
+      "files": [
+        {
+          "from": "./templates/redux-module.template",
+          "to": "./output/store/modules/${TM:MODULE_NAME:KEBAB_CASE}.js"
+        }
+      ]
+    }
+  ]
+}

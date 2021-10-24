@@ -1,0 +1,23 @@
+<template>
+  <div :class="classes">
+    <slot />
+  </div>
+</template>
+
+<script>
+export default {
+  name: '${TM:COMPONENT_NAME:PASCAL_CASE}',
+  props: {},
+  computed: {
+    classes() {
+      return {
+        '${TM:COMPONENT_NAME:KEBAB_CASE}': true,
+      };
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.${TM:COMPONENT_NAME:KEBAB_CASE} {}
+</style>

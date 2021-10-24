@@ -1,0 +1,17 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import style from './style.module.css';
+
+function ${TM:COMPONENT_NAME}({children}) {
+  return <div className={style.${TM:COMPONENT_NAME}}>{children}</div>;
+}
+
+${TM:COMPONENT_NAME}.defaultProps = {
+  children: '',
+};
+
+${TM:COMPONENT_NAME}.propTypes = {
+  children: PropTypes.node,
+};
+
+export default ${TM:COMPONENT_NAME};

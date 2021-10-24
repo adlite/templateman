@@ -1,0 +1,88 @@
+{
+  "templates": [
+    {
+      "name": "React Functional Component",
+      "files": [
+        {
+          "from": "./templates/react-func.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.tsx"
+        },
+        {
+          "from": "./templates/css-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/style.module.css"
+        },
+        {
+          "from": "./templates/export-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/index.ts"
+        }
+      ]
+    },
+    {
+      "name": "React Class Component",
+      "files": [
+        {
+          "from": "./templates/react-class.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.tsx"
+        },
+        {
+          "from": "./templates/export-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/index.ts"
+        },
+        {
+          "from": "./templates/css-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/style.module.css"
+        }
+      ]
+    },
+    {
+      "name": "Next Page",
+      "files": [
+        {
+          "from": "./templates/next-page.template",
+          "to": "./output/pages/${TM:PAGE_URL}.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Next Page with SSG",
+      "files": [
+        {
+          "from": "./templates/next-page-ssg.template",
+          "to": "./output/pages/${TM:PAGE_URL}.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Next Page with SSR",
+      "files": [
+        {
+          "from": "./templates/next-page-ssr.template",
+          "to": "./output/pages/${TM:PAGE_URL}.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Next API route",
+      "files": [
+        {
+          "from": "./templates/next-api-route.template",
+          "to": "./output/pages/api/${TM:API_PAGE_ROUTE}.tsx"
+        }
+      ]
+    },
+    {
+      "name": "React Functional Component (partial)",
+      "files": {
+        "from": "./templates/react-func.template",
+        "to": "./output/components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.tsx"
+      }
+    },
+    {
+      "name": "React Class Component (partial)",
+      "files": {
+        "from": "./templates/react-class.template",
+        "to": "./output/components/${TM:PARENT_COMPONENT_NAME}/${TM:COMPONENT_NAME}.tsx"
+      }
+    }
+  ]
+}

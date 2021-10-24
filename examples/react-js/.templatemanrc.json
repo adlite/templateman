@@ -1,0 +1,38 @@
+{
+  "templates": [
+    {
+      "name": "React Functional Component",
+      "files": [
+        {
+          "from": "./templates/react-func.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js"
+        },
+        {
+          "from": "./templates/export-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/index.js"
+        },
+        {
+          "from": "./templates/css-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/style.module.css"
+        }
+      ]
+    },
+    {
+      "name": "React Class Component",
+      "files": [
+        {
+          "from": "./templates/react-class.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/${TM:COMPONENT_NAME}.js"
+        },
+        {
+          "from": "./templates/export-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/index.js"
+        },
+        {
+          "from": "./templates/css-module.template",
+          "to": "./output/components/${TM:COMPONENT_NAME}/style.module.css"
+        }
+      ]
+    }
+  ]
+}
