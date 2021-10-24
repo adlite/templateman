@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
-import Parser from './Parser';
+import Parser from './parser';
 import {isObject, isString, arrayUnique} from './helpers';
 
 export default class TemplateFile {

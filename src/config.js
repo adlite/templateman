@@ -1,7 +1,7 @@
 import path from 'path';
 import chalk from 'chalk';
 import {isObject, isString, arrayUnique} from './helpers';
-import TemplateFile from './TemplateFile';
+import TemplateFile from './template-file';
 
 export default class Config {
   constructor(cosmiconfig) {

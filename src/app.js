@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import Config from './Config';
-import Inquirer from './Inquirer';
+import Config from './config';
+import Inquirer from './inquirer';
 
 const App = {
   config: {},

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import cosmiconfig from 'cosmiconfig';
-import App from './App';
+import App from './app';
 
 const config = cosmiconfig('templateman', {
   sync: true,
