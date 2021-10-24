@@ -19,13 +19,13 @@ const Inquirer = {
   },
 
   printWelcome: () => {
-    console.log(chalk.green('+------------------------+'));
-    console.log(chalk.green("> Hello, I'm Templateman <"));
-    console.log(chalk.green('+------------------------+'));
+    console.log(chalk.green('┌────────────────────────┐'));
+    console.log(chalk.green('│ Templateman CLI        │'));
+    console.log(chalk.green('└────────────────────────┘'));
   },
 
   printSuccess: () => {
-    console.log(chalk.green('✔ Your template has been successfully generated!'));
+    console.log(chalk.green('✔ Templates successfully generated!'));
   },
 };
 
