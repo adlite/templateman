@@ -1,10 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import mkdirp from 'mkdirp';
-import isString from 'is-string';
-import isObject from 'is-plain-object';
-import uniq from 'lodash.uniq';
 import Parser from './Parser';
+import {isObject, isString, arrayUnique} from './helpers';
 
 export default class TemplateFile {
   constructor(options) {
@@ -43,7 +41,7 @@ export default class TemplateFile {
   getVars() {
     let fileVars = Parser.getVars(this.content);
     let toVars = Parser.getVars(this.to);
-    this.vars = uniq(fileVars.concat(toVars));
+    this.vars = arrayUnique(fileVars.concat(toVars));
 
     return this.vars;
   }

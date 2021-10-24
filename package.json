@@ -46,9 +46,6 @@
     "clear": "^0.1.0",
     "cosmiconfig": "^4.0.0",
     "inquirer": "^5.1.0",
-    "is-plain-object": "^2.0.4",
-    "is-string": "^1.0.4",
-    "lodash.uniq": "^4.5.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {

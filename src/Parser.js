@@ -1,5 +1,5 @@
-import uniq from 'lodash.uniq';
 import caser from 'caesar-caser';
+import {arrayUnique} from './helpers';
 
 const Parser = {
   regExpVarName: /\${TM:([A-Z0-9_]+):?([A-Z0-9_]+)?}/gm,
@@ -27,7 +27,7 @@ const Parser = {
       const [match, varName] = res;
       vars.push(varName);
     }
-    return uniq(vars);
+    return arrayUnique(vars);
   },
 
   replaceVars: (data, values) => {

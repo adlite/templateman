@@ -1,8 +1,6 @@
 import path from 'path';
 import chalk from 'chalk';
-import isObject from 'is-plain-object';
-import isString from 'is-string';
-import uniq from 'lodash.uniq';
+import {isObject, isString, arrayUnique} from './helpers';
 import TemplateFile from './TemplateFile';
 
 export default class Config {
@@ -78,7 +76,7 @@ export default class Config {
       });
 
       this.currentTemplate.files = files;
-      this.vars = uniq(this.vars);
+      this.vars = arrayUnique(this.vars);
     };
 
     for (let template of this.options.templates) {
