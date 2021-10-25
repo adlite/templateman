@@ -15,7 +15,7 @@ const Inquirer = {
     return varNames.map(varName => ({
       type: 'input',
       name: varName,
-      message: `${caser(varName).convertTo('sentence')}:`,
+      message: `${caser(name).convert('constant', 'sentence')}:`,
     }));
   },
 
