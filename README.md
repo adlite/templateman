@@ -2,6 +2,8 @@
 
 Simple and flexible code generating CLI tool for frequently used components.
 
+![Templateman demo](./docs/assets/demo.gif)
+
 ## Concepts
 Templateman is designed to facilitate creation a large number of repeating components
 and make you free from this drudgery.
