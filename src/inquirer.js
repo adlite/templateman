@@ -26,7 +26,7 @@ const Inquirer = {
   },
 
   printSuccess: () => {
-    console.log(chalk.green('✔ Templates successfully generated!'));
+    console.log(chalk.green('✔ Files successfully generated!'));
   },
 };
 
