@@ -35,7 +35,7 @@ yarn global add templateman
 
 ### Basic example
 
-Let's imagine that you use React, CSS Modules and snapshot tests for each component in your project.
+Let's imagine that you use React, CSS Modules and snapshot tests in your project.
 
 Creating a huge number of such components can tire you very quickly. 
 You can automate this process with Templateman so that you don't have to do repetitive work over and over again.
@@ -64,7 +64,7 @@ export default ${TM:COMPONENT_NAME};
 
 ```
 Here `${TM:COMPONENT_NAME}` is a special syntax for Templateman variables.
-`VARIABLE_NAME` may contain only latin characters in uppercase, digits and underscore symbol.
+Variable name may contain only latin characters in uppercase, digits and underscore symbol.
 
 Then create templateman config file.
 
@@ -92,17 +92,17 @@ Now just type `tm` in your console:
 $ tm
 ```
 
-As you can see `React Functional Component` has appeared in the templates list.
-After selecting it Templateman will walk through all the template files in selected template and look for variables there.
+As you can see `React Functional Component` appeared in the list.
+After selecting it option Templateman will walk through all the template files in selected template and look for variables there.
 
-In our case you have only `${TM:COMPONENT_NAME}` variable now.
+In the example above template files have only one `${TM:COMPONENT_NAME}` variable. But it's possible to include variables with different names. 
 
-Then when you have set variable values they will be replaced and new template contents will emit into output file
+Then when you set variable values they will be replaced and new template contents will be emitted into output file
 specified in `to` field.
 
 ### Complex React-component
 
-Now let's complicate the task and add CSS module, re-export file and snapshot test file into our component.
+Now let's complicate the task and add CSS module, re-export file and snapshot test file into component template.
 
 First add required template files.
 
@@ -167,7 +167,7 @@ Then run `tm` command in your terminal and see how Templateman magic works.
 Sometimes you need to change case in Templateman variables. 
 For example, if your team use `kebab-case` in project file names, but framework requires to name its components in `PascalCase`.
 
-You can add `:CASE_RULE` postfix into `${TM:VARIABLE_NAME}` to postprocess Templateman variables.
+You can add `:CASE_RULE` postfix into `${TM:VARIABLE_NAME}` to postprocess values of Templateman variables.
 
 If you take the example above you can change config like this:
 ```json
@@ -198,7 +198,7 @@ If you take the example above you can change config like this:
 }
 ```
 
-And don't forget to change imports in your templates.
+And don't forget to change imports in your template files.
 
 *./templates/export-module.template:*
 ```
