@@ -25,9 +25,7 @@
     "watch": "babel --watch src --out-dir lib",
     "prepublishOnly": "npm run test && npm run build",
     "prettier": "prettier --config .prettierrc.json --write \"./**/*.{js,json}\" --ignore-path .gitignore",
-    "clean": "rimraf lib",
-    "test": "jest",
-    "ci": "npm run build && npm run test"
+    "clean": "rimraf lib"
   },
   "repository": {
     "type": "git",
