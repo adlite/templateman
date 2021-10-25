@@ -1,13 +1,10 @@
 #!/usr/bin/env node
 import cosmiconfig from 'cosmiconfig';
-import App from './App';
-
-//TODO: add commas in README
-//TODO: remove version patch from prepublish
+import App from './app';
 
 const config = cosmiconfig('templateman', {
-	sync: true,
-	rcExtensions: true,
+  sync: true,
+  rcExtensions: true,
 });
 
 App.run(config.load());

@@ -1,7 +1,7 @@
 {
   "name": "templateman",
   "version": "0.0.5",
-  "description": "Simple and flexible code generating tool for frequently used components.",
+  "description": "Simple and flexible code generating CLI tool for frequently used components.",
   "bin": {
     "tm": "./lib/index.js"
   },
@@ -12,7 +12,6 @@
     "template",
     "generate",
     "components",
-    "react",
     "automation"
   ],
   "files": [
@@ -22,19 +21,11 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "build": "rm -rf ./lib && babel ./src --out-dir ./lib",
-    "watch": "babel --watch ./src --out-dir ./lib",
-    "precommit": "lint-staged",
-    "prepublishOnly": "npm run build",
-    "postversion": "git add -A && git push && git push --tags",
-    "prettier": "prettier --config ./.prettierrc.json --write \"./src/**/*.js\"",
-    "clean": "rm -rf ./lib"
-  },
-  "lint-staged": {
-    "*.js": [
-      "npm run prettier",
-      "git add"
-    ]
+    "build": "npm run clean && babel src --out-dir lib",
+    "watch": "babel --watch src --out-dir lib",
+    "prepublishOnly": "npm run test && npm run build",
+    "prettier": "prettier --config .prettierrc.json --write \"./**/*.{js,json}\" --ignore-path .gitignore",
+    "clean": "rimraf lib"
   },
   "repository": {
     "type": "git",
@@ -47,20 +38,23 @@
   },
   "homepage": "https://github.com/adlite/templateman#readme",
   "dependencies": {
+    "caesar-caser": "^1.0.0-rc.2",
     "chalk": "^2.3.2",
     "clear": "^0.1.0",
     "cosmiconfig": "^4.0.0",
     "inquirer": "^5.1.0",
-    "is-plain-object": "^2.0.4",
-    "is-string": "^1.0.4",
-    "lodash.uniq": "^4.5.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.0.0",
-    "prettier": "1.11.1"
+    "husky": "^4.2.5",
+    "prettier": "^2.0.4",
+    "rimraf": "^2.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier"
+    }
   }
 }
