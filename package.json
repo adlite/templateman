@@ -1,7 +1,7 @@
 {
   "name": "templateman",
   "version": "0.0.5",
-  "description": "Simple and flexible code generating tool for frequently used components.",
+  "description": "Simple and flexible code generating CLI tool for frequently used components.",
   "bin": {
     "tm": "./lib/index.js"
   },
